@@ -16,21 +16,21 @@ function calcPrice() {
 
     let markup;
     if (age == "0-4") {
-        markup = .25
-    } else if (age == "5-7") {
-        markup = .22
-    } else if (age == "8-11") {
-        markup = .20
-    } else if (age == "12-15") {
-        markup = .19
-    } else if (age == "16-19") {
-        markup = .18
-    } else if (age == "20-22") {
         markup = .17
-    } else if (age == "23-24") {
+    } else if (age == "5-7") {
         markup = .16
-    } else if (age == "25+") {
+    } else if (age == "8-11") {
         markup = .15
+    } else if (age == "12-15") {
+        markup = .14
+    } else if (age == "16-19") {
+        markup = .13
+    } else if (age == "20-22") {
+        markup = .12
+    } else if (age == "23-24") {
+        markup = .11
+    } else if (age == "25+") {
+        markup = .10
     }
 
 
@@ -47,11 +47,5 @@ function calcPrice() {
     }
 
 
-    document.getElementById("calc").innerHTML = "Product name: " + prodName + "<br>" + "Product type: " + productType + "<br>" + "Pour Cost: " + pourCost.toFixed(2) + "<br>" + "Pour price: " + pourPrice.toFixed(2) + "<br>" + "Profit: $" + profit.toFixed(2);
+    document.getElementById("calc").innerHTML = "Product name: " + prodName + "<br>" + "Product type: " + productType + "<br>" + "Pour Cost: $" + pourCost.toFixed(2) + "<br>" + "Pour price: $" + pourPrice.toFixed(2) + "<br>" + "Profit: $" + profit.toFixed(2);
 }
-
-
-
-
-
-

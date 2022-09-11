@@ -1,17 +1,48 @@
 body {
     text-align: center;
+    background-color:#b6f0ed;
 }
 
 h1 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 75px;
     text-align: center;
     padding: 20px 0px;
+    margin: 10px 0px;
+}
+
+label {
+    margin: 0px;
+    padding: 5px;
 }
 
 .typeDrop, .ageDrop {
-    padding: 15px 0px;
+    padding-bottom: 15px;
 }
 
 button {
     margin: 15px;
 }
+
+.content {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input {
+    margin: 0px;
+    padding: 10px 0px 5px 0px;
+}
+
+#prod {
+    padding-top: 0px;
+}
+
+#calc {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
