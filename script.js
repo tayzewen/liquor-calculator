@@ -2,23 +2,7 @@ const poursPerBtl = 17
 const garnish = 0.50
 const shrinkage = 0.20
 const acqCost = document.getElementById("acqCost")
-
-// function calcPrice() {
-//     let prodName = document.getElementById("prodName").value;
-//     let liquorType = document.getElementById("liquorType").value;
-//     let acqCost = document.getElementById("acqCost").value;
-//     let pourCost = acqCost / poursPerBtl;
-//     let markup = document.getElementById("markup").value / 100;
-//     let basePrice = pourCost / markup;
-//     let shrink = (basePrice * shrinkage) + garnish;
-//     let pourPrice = shrink + basePrice;
-//     let profit = (pourPrice * poursPerBtl) - acqCost;
-
-    
-
-//     document.getElementById("calc").innerHTML = "Product name: " + prodName + "<br>" + "Product type: " + liquorType + "<br>" + "Pour Cost: " + pourCost.toFixed(2) + "<br>" + "Pour price: " + pourPrice.toFixed(2) + "<br>" + "Profit: $" + profit.toFixed(2);
-
-// }
+const scotchTar= 0.25
 
 function calcPrice() {
 
@@ -49,6 +33,7 @@ function calcPrice() {
         markup = .15
     }
 
+
     let prodName = document.getElementById("prodName").value;
     let acqCost = document.getElementById("acqCost").value;
     let pourCost = acqCost / poursPerBtl;
@@ -57,10 +42,9 @@ function calcPrice() {
     let pourPrice = shrink + basePrice;
     let profit = (pourPrice * poursPerBtl) - acqCost;
 
-
-
-
-
+    if (productType == "scotch") {
+        pourPrice = (basePrice * scotchTar) + basePrice + shrink;
+    }
 
 
     document.getElementById("calc").innerHTML = "Product name: " + prodName + "<br>" + "Product type: " + productType + "<br>" + "Pour Cost: " + pourCost.toFixed(2) + "<br>" + "Pour price: " + pourPrice.toFixed(2) + "<br>" + "Profit: $" + profit.toFixed(2);
