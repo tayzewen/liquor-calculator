@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.typeDrop, .ageDrop {
+    padding: 15px 0px;
+}
+
+button {
+    margin: 15px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquor Calculator</title>
+</head>
+
+<body>
+    <h1>Liquor Calculator</h1>
+    
+    <div class="content">
+        <div class="typeDrop">
+            <label for="productType">Select a product type:</label>
+            <select name="productType" id="liqType">
+                <option value="bourbon">Bourbon</option>
+                <option value="scotch">Scotch</option>
+                <option value="rye">Rye</option>
+                <option value="irish">Irish</option>
+                <option value="american">American</option>
+                <option value="canadian">Canadian</option>
+                <option value="asian">Asian</option>
+                <option value="vodka">Vodka</option>
+                <option value="gin">Gin</option>
+                <option value="tequila">Tequila</option>
+                <option value="rum">Rum</option>
+            </select>
+        </div>
+        <div class="ageDrop">
+            <label for="ageStatement">Select an age statement:</label>
+            <select name="ageStatement" id="ageStatement">
+                <option value="0-4">0-4 yrs (none)</option>
+                <option value="5-7">5-7 yrs</option>
+                <option value="8-11">8-11 yrs</option>
+                <option value="12-15">12-15 yrs</option>
+                <option value="16-19">16-19 yrs</option>
+                <option value="20-22">20-22 yrs</option>
+                <option value="23-24">23-24 yrs</option>
+                <option value="25+">25+ yrs</option>
+                
+            </select>
+
+
+        </div>
+        
+
+
+
+        <p>Product name:</p> 
+        <input type="text" id="prodName">
+        <P>Acquisition cost:</P>
+        <input type="number" id="acqCost">
+        <br>
+        <button onclick="calcPrice()">Calculate!</button>
+        <br>
+        <br>
+
+        <div id="calc">
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
