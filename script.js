@@ -1,20 +1,26 @@
 const poursPerBtl = 17
 const garnish = 0.50
 const shrinkage = 0.20
-const acqCost = document.getElementById("acqCost")
 const scotchTar= 0.25
+const allEntries = [];
 
-function calcPrice() {
-
+function getType() {
     let e = document.getElementById("liqType");
-    let productType = e.value;
+    const productType = e.value;
     console.log(productType);
+    return productType;
+}
 
+function getAge() {
     let f = document.getElementById("ageStatement");
-    let age = f.value;
+    const age = f.value;
     console.log(age);
+    return age;
+}
 
+function getMarkup() {
     let markup;
+    let age = getAge();
     if (age == "0-4") {
         markup = .17
     } else if (age == "5-7") {
@@ -33,19 +39,69 @@ function calcPrice() {
         markup = .10
     }
 
+    return markup;
+}
 
+function calculate() {
+    let productType = getType();
+    let markup = getMarkup();
     let prodName = document.getElementById("prodName").value;
     let acqCost = document.getElementById("acqCost").value;
-    let pourCost = acqCost / poursPerBtl;
+    let pourCost = (acqCost / poursPerBtl).toFixed(2);
     let basePrice = pourCost / markup;
     let shrink = (basePrice * shrinkage) + garnish;
-    let pourPrice = shrink + basePrice;
-    let profit = (pourPrice * poursPerBtl) - acqCost;
+    let pourPrice = (shrink + basePrice).toFixed(2);
+    let profit = ((pourPrice * poursPerBtl) - acqCost).toFixed(2);
 
     if (productType == "scotch") {
-        pourPrice = (basePrice * scotchTar) + basePrice + shrink;
+        pourPrice = ((basePrice * scotchTar) + basePrice + shrink).toFixed(2);
     }
 
-
-    document.getElementById("calc").innerHTML = "Product name: " + prodName + "<br>" + "Product type: " + productType + "<br>" + "Pour Cost: $" + pourCost.toFixed(2) + "<br>" + "Pour price: $" + pourPrice.toFixed(2) + "<br>" + "Profit: $" + profit.toFixed(2);
+    return {
+        Name: prodName,
+        Type: productType,
+        Cost: "$" + pourCost,
+        Price: "$" + pourPrice,
+        Profit: "$" + profit
+    };
 }
+
+function displayCalc() {
+    let entry = calculate();
+
+
+    document.getElementById("calc").innerHTML = "Product name: " + entry.Name + "<br>" + "Product type: " + entry.Type + "<br>" + "Pour Cost: " + entry.Cost + "<br>" + "Pour price: " + entry.Price + "<br>" + "Profit: " + entry.Profit;
+
+    // btn();
+    return entry;
+
+}
+
+// function btn() {
+//     const btnSave = document.createElement("button");
+//     btnSave.innerHTML = "Save";
+//     document.getElementById("calc").appendChild(btnSave);
+//     btnSave.addEventListener("click", saveEntry);
+// }
+
+// function saveEntry() {
+//     let entry = displayCalc();
+//     allEntries.push(entry);
+//     console.log(allEntries);
+// }
+
+// function displayEntries() {
+//     $.each(allEntries, function (i, item) {
+//         console.log("Values in object " + i + ":");
+//         document.getElementById("entries").innerHTML += "<br>";
+//         $.each(item, function(key, value) {
+//             console.log(key + " = " + value);
+//             document.getElementById("entries").innerHTML += (key + ": " + value + "<br>");
+//         });
+//         document.getElementById("entries").innerHTML += "<br>";
+//     });
+// }
+
+
+
+

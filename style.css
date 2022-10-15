@@ -1,6 +1,43 @@
-body {
+.hero-content {
+    background: url(images/calc-resize.jpg) no-repeat;
+    background-position: 90% 10%;
+    background-size: 100vh;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+  }
+
+#logo {
+    animation: 1s ease-out 0s 1 slideInFromTop;
+    margin-left: 4rem;
+    width: auto;
+    height: 50vh;
+}
+
+#herotext {
+    width: 40vw;
+    margin: 0 4rem 0; 
+    padding: 1rem;
+    text-align: justify;
+
+}
+
+.content {
     text-align: center;
-    background-color:#b6f0ed;
+    padding: 8rem 0 10rem 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 h1 {
@@ -25,26 +62,16 @@ button {
     margin-top: 15px;
 }
 
-.content {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 .input {
     margin: 0px;
-    padding: 10px 0px 5px 0px;
+    padding: 10px 0 0;
 }
 
 #prod {
-    padding-top: 0px;
+    padding: 0px;
 }
 
 #calc {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom: 20px;
+
 }
-
-
-
-
